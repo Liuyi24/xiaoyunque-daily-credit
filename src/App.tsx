@@ -592,19 +592,6 @@ function RewardModal({ isOpen, onClose, onRewardAction }: { isOpen: boolean; onC
             >
               <div className="relative w-full h-full rounded-[24px] overflow-visible">
                 <img src={dailyRewardBg} alt="背景" className="absolute inset-0 w-full h-full object-cover rounded-[24px]" />
-                <div className="relative z-20 flex justify-end p-[6px]">
-                  <button
-                    onClick={onClose}
-                    className="w-[44px] h-[44px] flex items-center justify-center shrink-0 hover:opacity-80 active:opacity-60 transition-opacity"
-                  >
-                    <img
-                      src={closeIcon}
-                      alt="关闭"
-                      className="w-full h-full object-contain block"
-                    />
-                  </button>
-                </div>
-                
                 <button
                   onClick={() => {
                     onRewardAction();
