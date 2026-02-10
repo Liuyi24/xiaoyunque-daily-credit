@@ -615,9 +615,9 @@ function RewardModal({ isOpen, onClose, onRewardAction }: { isOpen: boolean; onC
                 </button>
                 <button
                   onClick={onClose}
-                  className="absolute bottom-[-60px] right-0 w-[44px] h-[44px] flex items-center justify-center hover:opacity-80 active:opacity-60 transition-opacity z-20"
+                  className="absolute bottom-[-60px] right-0 w-[44px] h-[44px] block shrink-0 hover:opacity-80 active:opacity-60 transition-opacity z-20"
                 >
-                  <img src={closeIcon} alt="关闭" className="w-full h-full object-contain" />
+                  <img src={closeIcon} alt="关闭" className="w-full h-full object-contain block" />
                 </button>
               </div>
             </motion.div>
