@@ -216,12 +216,12 @@ function GlowingCapsule({ isAnimating, children }: { isAnimating: boolean; child
         <svg className="block size-full overflow-visible" fill="none" preserveAspectRatio="none" viewBox="0 0 110 32">
           <defs>
             <linearGradient id="capsule-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="hsla(255, 100%, 72.5%, 0.62)" />
-              <stop offset="50%" stopColor="hsla(297, 100%, 93.5%, 0.6)" />
+              <stop offset="0%" stopColor="hsla(255, 100%, 72.5%, 0.75)" />
+              <stop offset="50%" stopColor="hsla(297, 100%, 93.5%, 0.7)" />
               <stop offset="100%" stopColor="hsla(220, 100%, 90%, 1)" />
             </linearGradient>
             <filter id="capsule-inner-glow" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur stdDeviation="13" />
+              <feGaussianBlur stdDeviation="14" />
             </filter>
             <clipPath id="capsule-clip">
               <rect x="0.5" y="0.5" width="109" height="31" rx="16" ry="16" />
@@ -236,7 +236,7 @@ function GlowingCapsule({ isAnimating, children }: { isAnimating: boolean; child
             ry="16"
             fill="none"
             stroke="url(#capsule-gradient)"
-            strokeWidth="10"
+            strokeWidth="11"
             strokeLinecap="round"
             pathLength="2"
             strokeDasharray="1 1"
@@ -592,6 +592,18 @@ function RewardModal({ isOpen, onClose, onRewardAction }: { isOpen: boolean; onC
             >
               <div className="relative w-full h-full rounded-[24px] overflow-visible">
                 <img src={dailyRewardBg} alt="背景" className="absolute inset-0 w-full h-full object-cover rounded-[24px]" />
+                <div className="relative z-20 flex justify-end p-[6px]">
+                  <button
+                    onClick={onClose}
+                    className="w-[44px] h-[44px] flex items-center justify-center shrink-0 hover:opacity-80 active:opacity-60 transition-opacity"
+                  >
+                    <img
+                      src={closeIcon}
+                      alt="关闭"
+                      className="w-full h-full object-contain block"
+                    />
+                  </button>
+                </div>
                 
                 <button
                   onClick={() => {
@@ -612,12 +624,6 @@ function RewardModal({ isOpen, onClose, onRewardAction }: { isOpen: boolean; onC
                   type="button"
                 >
                   <span className="text-white text-[14px] font-medium" style={{ fontFamily: "PingFang SC", fontWeight: 500 }}>积分领取中</span>
-                </button>
-                <button
-                  onClick={onClose}
-                  className="absolute bottom-[-60px] right-0 w-[44px] h-[44px] block shrink-0 hover:opacity-80 active:opacity-60 transition-opacity z-20"
-                >
-                  <img src={closeIcon} alt="关闭" className="w-full h-full object-contain block" />
                 </button>
               </div>
             </motion.div>
