@@ -17,6 +17,11 @@
 - 交互状态：积分领取逻辑由 creditCount、isStarRotated、status 管理，触发动画并更新顶部展示。
 - 光晕动画：GlowingCapsule 使用 SVG 渐变与模糊滤镜实现内阴影环绕效果，动画时序由 index.css 中的 keyframes 控制。
 
+## 组件拆分说明
+- 环绕动画：GlowingCapsule 组件，SVG 渐变与滤镜在 App.tsx 内定义，[App.tsx](file:///Users/bytedance/Desktop/Coding/Pippit%20credit/src/App.tsx#L211-L268)
+- 星星旋转动画：NavigationBar 内部星星由 isStarRotated 驱动 motion 旋转与位移，[App.tsx](file:///Users/bytedance/Desktop/Coding/Pippit%20credit/src/App.tsx#L271-L338)
+- 签到弹窗点击事件监听：RewardModal 蒙层点击触发 onClose，按钮点击触发 onRewardAction，[App.tsx](file:///Users/bytedance/Desktop/Coding/Pippit%20credit/src/App.tsx#L565-L616)
+
 ## 构建与运行
 - 安装依赖：npm i
 - 本地开发：npm run dev
