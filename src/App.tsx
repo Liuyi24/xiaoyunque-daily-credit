@@ -215,10 +215,10 @@ function GlowingCapsule({ isAnimating, children }: { isAnimating: boolean; child
       <div className="absolute inset-0 pointer-events-none">
         <svg className="block size-full overflow-visible" fill="none" preserveAspectRatio="none" viewBox="0 0 110 32">
           <defs>
-            <linearGradient id="capsule-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="hsla(255, 100%, 72.5%, 0.75)" />
-              <stop offset="50%" stopColor="hsla(297, 100%, 93.5%, 0.7)" />
-              <stop offset="100%" stopColor="hsla(220, 100%, 90%, 1)" />
+            <linearGradient id="capsule-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="hsla(255, 100%, 75%, 0.8)" />
+              <stop offset="50%" stopColor="hsla(297, 100%, 88%, 0.85)" />
+              <stop offset="100%" stopColor="hsla(220, 100%, 85%, 1)" />
             </linearGradient>
             <filter id="capsule-inner-glow" x="-50%" y="-50%" width="200%" height="200%">
               <feGaussianBlur stdDeviation="14" />
