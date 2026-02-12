@@ -2,8 +2,8 @@ import svgPaths from "./imports/svg-kvslezqatk";
 import { ImageWithFallback } from './components/figma/ImageWithFallback';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import closeIcon from './assets/close-icon.png';
 import dailyRewardBg from './assets/daily-reward-bg.png';
+import closeButton from './assets/close-button.png';
 
 // ============== 类型定义 ==============
 
@@ -576,44 +576,52 @@ function RewardModal({ isOpen, onClose, onRewardAction }: { isOpen: boolean; onC
             onClick={onClose}
             className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center"
           >
-            {/* Modal */}
-            <motion.div
-              initial={{ scale: 0.5 }}
-              animate={{ scale: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{
-                type: "spring",
-                stiffness: 420,
-                damping: 30,
-                mass: 1.1
-              }}
-              onClick={(e) => e.stopPropagation()}
-              className="relative w-[279px] h-[346px] overflow-visible"
-            >
-              <div className="relative w-full h-full rounded-[24px] overflow-visible">
-                <img src={dailyRewardBg} alt="背景" className="absolute inset-0 w-full h-full object-cover rounded-[24px]" />
-                <button
-                  onClick={() => {
-                    onRewardAction();
-                    onClose();
-                  }}
-                  className="absolute bg-black rounded-[16px] flex items-center justify-center z-10 hover:opacity-90 active:opacity-80 transition-opacity"
-                  style={{
-                    width: '231px',
-                    height: '52px',
-                    top: '236px',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    borderRadius: '16px',
-                    cornerSmoothing: '100%',
-                    WebkitCornerSmoothing: '100%'
-                  } as React.CSSProperties}
-                  type="button"
-                >
-                  <span className="text-white text-[14px] font-medium" style={{ fontFamily: "PingFang SC", fontWeight: 500 }}>积分领取中</span>
-                </button>
-              </div>
-            </motion.div>
+            <div className="relative flex items-center justify-center">
+              {/* Modal */}
+              <motion.div
+                initial={{ scale: 0.5 }}
+                animate={{ scale: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 420,
+                  damping: 30,
+                  mass: 1.1
+                }}
+                onClick={(e) => e.stopPropagation()}
+                className="relative w-[279px] h-[346px] overflow-visible"
+              >
+                <div className="relative w-full h-full rounded-[24px] overflow-visible">
+                  <img src={dailyRewardBg} alt="背景" className="absolute inset-0 w-full h-full object-cover rounded-[24px]" />
+                  <button
+                    onClick={() => {
+                      onRewardAction();
+                      onClose();
+                    }}
+                    className="absolute bg-black rounded-[16px] flex items-center justify-center z-10 hover:opacity-90 active:opacity-80 transition-opacity"
+                    style={{
+                      width: '231px',
+                      height: '52px',
+                      top: '236px',
+                      left: '50%',
+                      transform: 'translateX(-50%)',
+                      borderRadius: '16px',
+                      cornerSmoothing: '100%',
+                      WebkitCornerSmoothing: '100%'
+                    } as React.CSSProperties}
+                    type="button"
+                  >
+                    <span className="text-white text-[14px] font-medium" style={{ fontFamily: "PingFang SC", fontWeight: 500 }}>积分领取中</span>
+                  </button>
+                </div>
+              </motion.div>
+              <button
+                onClick={onClose}
+                className="absolute left-1/2 top-full mt-[24px] h-[44px] w-[44px] -translate-x-1/2 hover:opacity-80 active:opacity-60 transition-opacity"
+              >
+                <img src={closeButton} alt="关闭" className="block h-[44px] w-[44px] object-contain" />
+              </button>
+            </div>
           </motion.div>
         </>
       )}
